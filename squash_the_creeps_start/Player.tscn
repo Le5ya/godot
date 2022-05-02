@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://art/player.glb" type="PackedScene" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
 
 [sub_resource type="SphereShape" id=1]
 radius = 1.25301
 
 [node name="Player" type="KinematicBody"]
+script = ExtResource( 2 )
 
 [node name="Pivot" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88471, 0 )
@@ -13,7 +15,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88471, 0 )
 [node name="Character" parent="Pivot" instance=ExtResource( 1 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.751585, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Pivot/Character"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07986, 0 )
-visible = false
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 5.45256, 0 )
 shape = SubResource( 1 )
